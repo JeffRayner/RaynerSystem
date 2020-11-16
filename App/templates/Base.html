@@ -1,0 +1,27 @@
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>CPA System</title>
+    <link rel="shortcut icon" href="{{ url_for('static', filename="img/favicon16.png") }}" />
+    <link rel="stylesheet" href="{{ url_for('static', filename="css/bootstrap.min.css") }}">
+    <script src="{{ url_for('static', filename="jquery/jquery-3.5.1.min.js") }}"></script>
+    <script src="{{ url_for('static', filename="js/bootstrap.min.js") }}"></script>
+
+    <link rel='stylesheet' href='{{ url_for("static", filename="css/colors.css") }}'>
+    <link rel="stylesheet" href="{{ url_for('static', filename="css/base.css") }}">
+    
+</head>
+
+<body >
+    {% include 'includes/header.html' %}
+    
+    <main class="h-100 w-100 d-flex">
+        {% block content %}
+        {% endblock %}
+    </main>
+    
+    {% include 'includes/footer.html' %}
+</body>
+
+</html>

@@ -1,0 +1,12 @@
+{% extends "Base.html" %}
+
+{% block content %}
+<div class="h-100 w-100 flex-fill">
+    <select class="form-control">
+        <option value="" disabled selected>Escolha um Usuario</option>
+        {% for i in result %}
+            <option value="{{ i.Id }}">{{ i.Name}}</option>
+        {% endfor %}
+    </select>
+</div>
+{% endblock %}

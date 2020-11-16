@@ -1,0 +1,43 @@
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>CPA System</title>
+    <link rel="shortcut icon" href="{{ url_for('static', filename="img/favicon.ico") }}" />
+    <link rel="stylesheet" href="{{ url_for('static', filename="css/bootstrap.min.css") }}">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    
+    <script src="{{ url_for('static', filename="jquery/jquery-3.5.1.min.js") }}"></script>
+    <script src="{{ url_for('static', filename="js/bootstrap.min.js") }}"></script>
+
+    <!--
+    <link rel='stylesheet' href='{{ url_for("static", filename="css/colors.css") }}'>
+    <link rel='stylesheet' href='{{ url_for("static", filename="css/login.css") }}'>
+    -->
+</head>
+<body>
+    <div class="w-100 h-100 d-flex justify-content-center align-items-center bg-danger">
+
+        <form action="" method="POST" class="p-4 d-flex flex-column justify-content-center align-items-center bg-white shadow-lg rounded">
+
+            <a href="/index" class="mb-4" ><img src="static/img/logo.png" class="img-thumbnail" alt="Site Logo"></a>
+
+            <input type="text" class="form-control m-2 text-center shadow-none" name="usuario" placeholder="Usuário" required autofocus>
+            <input type="password" class="form-control m-2 text-center shadow-none" name="senha" placeholder="Senha" required>
+
+            <input type="submit" class="m-2 text-center btn btn-lg btn-danger btn-block" name="btnLogin" value="Login">
+            
+            {% with messages = get_flashed_messages() %}
+                {% if messages %}
+                    {% for message in messages %}
+                    <div class="mt-2 mb-auto text-center alert alert-danger" >
+                        {{ message }}
+                    </div>
+                    {% endfor %}
+                {% endif %}
+            {% endwith %}
+
+        </form>
+
+    </div>
+</body>
+</html>
