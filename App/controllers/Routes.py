@@ -14,7 +14,7 @@ def page_not_found(error):
 @app.route("/")
 @app.route("/home")
 @app.route("/index")
-@ControllerAcess.loginRequired
+@loginRequired
 def main():
     return render_template('index.html')
 
@@ -59,15 +59,3 @@ def assign_to(id):
         if i['ID'] == id:
             return jsonify(i)
     return "nenhum resultado encontrado"
-
-"""
-@app.route('/teste', methods=['GET'])
-def teste1():
-    x = listUsers()
-    if 'id' in request.args:
-        id = int(request.args['id'])
-        for i in x:
-            if i['ID'] == id:
-                return jsonify(i)
-    else:
-        return "nenhum resultado encontrado"""
