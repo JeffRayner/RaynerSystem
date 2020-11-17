@@ -1,12 +1,16 @@
 ###################################################
-from App import app
+#from App import app
 from os import urandom
-import socket
+from flask import Flask
 
-host = socket.gethostname()
-IP = socket.gethostbyname(host)
+app = Flask(__name__)
+app.secret_key = urandom(12)
 
+@app.route('/')
+def hello_world():
+    return 'Hello, World!'
+    
 if __name__ == '__main__':
-    app.secret_key = urandom(12)
+    
     #app.run(host= str(IP) , debug=True)
     app.run(debug=True)
