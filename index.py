@@ -1,22 +1,15 @@
-from flask import Flask
+"""from flask import Flask
 app = Flask(__name__)
-
-
 @app.route('/')
 def home():
     return 'Home Page Route - nice work Andrew!!!'
+"""
 
-
-@app.route('/about')
-def about():
-    return 'About Page Route'
-
-
-@app.route('/portfolio')
-def portfolio():
-    return 'Portfolio Page Route'
-
-
-@app.route('/contact')
-def contact():
-    return 'Contact Page Route'
+###################################################
+from App import app
+from os import urandom
+#import socket
+#host = socket.gethostname()
+#IP = socket.gethostbyname(host)
+app.secret_key = urandom(12)
+app.run(debug=True)
