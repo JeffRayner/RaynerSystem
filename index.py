@@ -8,8 +8,9 @@ def home():
 ###################################################
 from App import app
 from os import urandom
+
 #import socket
 #host = socket.gethostname()
 #IP = socket.gethostbyname(host)
+
 app.secret_key = urandom(12)
-app.run(debug=True)
