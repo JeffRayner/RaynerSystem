@@ -24,12 +24,12 @@ def login():
     if request.method == "POST":
         validateLogin(request.form['usuario'], request.form['senha'])
         if session.get("usuario"):
-            return goToPage("main")
+            return goToPage("/")
         else:
             flash("Login Inválido !")
 
     if session.get("usuario"):
-        return goToPage("main")
+        return goToPage("/")
 
     return render_template('login.html')
 
@@ -39,7 +39,7 @@ def login():
 def logout():
     if session.get("usuario"):
         del session["usuario"]
-    return goToPage("main")
+    return goToPage("/")
 
 ####################################################################
 
