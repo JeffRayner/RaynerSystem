@@ -12,7 +12,6 @@ def page_not_found(error):
 ####################################################################
 
 @app.route("/")
-@app.route("/home")
 @app.route("/index")
 @loginRequired
 def main():
@@ -25,7 +24,6 @@ def login():
     if request.method == "POST":
         validateLogin(request.form['usuario'], request.form['senha'])
         if session.get("usuario"):
-            print (session["usuario"])
             return goToPage("main")
         else:
             flash("Login Inválido !")
@@ -48,14 +46,7 @@ def logout():
 @app.route('/teste', methods=['GET'])
 def teste():
     x = listUsers()
-    #x = json.dumps(x)
     return render_template( 'usuarios.html', result=x)
-    #return make_response(jsonify(x), 200)
 
-@app.route("/teste/<int:id>", methods=['GET'])
-def assign_to(id):
-    lista = listUsers()
-    for i in lista:
-        if i['ID'] == id:
-            return jsonify(i)
-    return "nenhum resultado encontrado"
+
+
