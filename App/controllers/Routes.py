@@ -14,7 +14,7 @@ def page_not_found(error):
 @app.route("/")
 @app.route("/home")
 @app.route("/index")
-#@ControllerAcess.loginRequired
+@ControllerAcess.loginRequired
 def main():
     return render_template('index.html')
 
