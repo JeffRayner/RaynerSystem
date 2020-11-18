@@ -1,6 +1,6 @@
 from App import app
 from App.controllers.ControllerAcess import *
-from flask import render_template, request, flash, session,json, jsonify, make_response
+from flask import render_template, request, flash,json, jsonify
 
 
 ####################################################################
@@ -22,14 +22,13 @@ def main():
 @app.route("/login", methods=['GET','POST'])
 def login():
     if request.method == "POST":
-        validateLogin(request.form['usuario'], request.form['senha'])
-        if session.get("usuario"):
-            return goToPage("/")
+        if validateLogin(request.form['usuario'], request.form['senha']):
+            return goToPage("main")
         else:
             flash("Login Inválido !")
 
-    if session.get("usuario"):
-        return goToPage("/")
+    if isLogged():
+        return goToPage("main")
 
     return render_template('login.html')
 
@@ -37,16 +36,12 @@ def login():
 
 @app.route('/logout')
 def logout():
-    if session.get("usuario"):
-        del session["usuario"]
-    return goToPage("/")
+    islogout()
+    return goToPage("main")
 
 ####################################################################
 
-@app.route('/teste', methods=['GET'])
-def teste():
+@app.route('/usuarios', methods=['GET'])
+def usuarios():
     x = listUsers()
     return render_template( 'usuarios.html', result=x)
-
-
-

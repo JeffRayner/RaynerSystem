@@ -19,6 +19,9 @@ class User():
         self.level = lvl
         self.email = email
         self.date = date
+
+    def __repr__(self):
+        return f'{"id":{self.ID},"name":{self.name},"level":{self.level},"email":{self.email},"date":{self.date} }'
     
     def __clearPassword(self):
         self.password = ''
@@ -45,7 +48,7 @@ class User():
         return values
 
        
-x = User()
+#x = User()
 #print (x.checkLogin())
 #print (x.getUserList())
 #input('press to continue')
