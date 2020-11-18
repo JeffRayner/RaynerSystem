@@ -1,4 +1,3 @@
-
 from App import Conexao as DB
 from datetime import datetime
 
@@ -13,16 +12,16 @@ class User():
     __Table = "USERS"
 
     def __init__(self, id=None, name='', passw='', lvl='', email='', date=''):
-        self.ID = id
+        self.id = id
         self.name = name
         self.password = passw
         self.level = lvl
         self.email = email
         self.date = date
-
-    def __repr__(self):
-        return f'{"id":{self.ID},"name":{self.name},"level":{self.level},"email":{self.email},"date":{self.date} }'
     
+    def __repr__(self):
+        return f'{{ "id":{self.id}, "name":"{self.name}", "level":{self.level}, "email":"{self.email}", "date":"{self.date}" }}'
+
     def __clearPassword(self):
         self.password = ''
     
@@ -40,16 +39,18 @@ class User():
             return True
 
     def getUserList(self):
-        cmd =f'SELECT id, name, level, email, date FROM {self.__Table}'
-        return DB.readData(cmd)
+        users = []
+        cmd =f'SELECT * FROM {self.__Table}'
+        cmd = DB.readData(cmd)
+        for u in cmd:
+            users.append( eval(str(User(*u))) )
+        return users
 
     def getValues(self):
-        values = (self.ID, self.name, self.password, self.level, self.email, self.date)
+        values = (self.id, self.name, self.password, self.level, self.email, self.date)
         return values
 
        
 #x = User()
-#print (x.checkLogin())
-#print (x.getUserList())
-#input('press to continue')
-
+#l = x.getUserList()
+#print ( type(l[0]) )
