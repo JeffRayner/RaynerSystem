@@ -15,7 +15,6 @@ def loginRequired(func):
     return decoratorFunc
 
 def isLogged():
-    print (session.get("usuario"))
     return session.get("usuario")
 
 def validateLogin(user, senha):
