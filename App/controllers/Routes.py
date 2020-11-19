@@ -12,7 +12,6 @@ def page_not_found(error):
 ####################################################################
 
 @app.route("/")
-@app.route("/index")
 @loginRequired
 def main():
     return render_template('index.html')
