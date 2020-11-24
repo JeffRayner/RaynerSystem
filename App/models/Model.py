@@ -11,7 +11,7 @@ def getDateTime():
 class User():
     __Table = "USERS"
 
-    def __init__(self, id=None, name='', passw='', lvl='', email='', date=''):
+    def __init__(self, id=None, name='', passw='', lvl=None, email='', date=''):
         self.id = id
         self.name = name
         self.password = passw
@@ -20,37 +20,46 @@ class User():
         self.date = date
     
     def __repr__(self):
-        return f'{{ "id":{self.id}, "name":"{self.name}", "level":{self.level}, "email":"{self.email}", "date":"{self.date}" }}'
+        return f'{self.__class__.__name__}(id={self.id}, name="{self.name}", passw="", lvl={self.level}, email="{self.email}", date="{self.date}")'
+
+    def __str__(self):
+        return f'ID: {self.id}\nName: {self.name}\nLevel: {self.level}\nEmail: {self.email}\nDate:{self.date}'
+
+    def getDictValues(self):
+        return {"id":self.id, "name":self.name, "lvl":self.level, "email":self.email, "date":self.date}
 
     def __clearPassword(self):
         self.password = ''
     
     def creatUser(self):
         self.date = getDate()
-        cmd = f'INSERT INTO {self.__Table} (name, password, level, email, date) VALUES ("{self.name}","{self.password}",{self.level},"{self.email}","{self.date}")'
-        return DB.queryDB(cmd)
+        sql = f'INSERT INTO {self.__Table} (name, password, level, email, date) VALUES ("{self.name}","{self.password}",{self.level},"{self.email}","{self.date}")'
+        return DB.queryDB(sql)
     
     def checkLogin(self):
-        cmd = f'SELECT * FROM {self.__Table} WHERE name = "{self.name}" AND password = "{self.password}" '
-        res = DB.readData(cmd, True)
-        if res:
-            self.__init__(*res)
+        sql = f'SELECT * FROM {self.__Table} WHERE name = "{self.name}" AND password = "{self.password}" '
+        sql = DB.readData(sql, True)
+        if sql:
+            self.__init__(*sql)
             self.__clearPassword()
             return True
+    
+    def changePassword(self, newPassword):
+        sql = f''
+        return DB.queryDB(sql)
+
+    def changeLevel(self, newLvl):
+        sql = f''
+        return DB.queryDB(sql)
 
     def getUserList(self):
-        users = []
-        cmd =f'SELECT * FROM {self.__Table}'
-        cmd = DB.readData(cmd)
-        for u in cmd:
-            users.append( eval(str(User(*u))) )
-        return users
+        listaDeUsuarios = []
+        sql =f'SELECT * FROM {self.__Table}'
+        sql = DB.readData(sql)
+        if sql:
+            for usuario in sql:
+                usuario = User(*usuario)
+                listaDeUsuarios.append( usuario.getDictValues())
+            return listaDeUsuarios
 
-    def getValues(self):
-        values = (self.id, self.name, self.password, self.level, self.email, self.date)
-        return values
 
-       
-#x = User()
-#l = x.getUserList()
-#print ( type(l[0]) )

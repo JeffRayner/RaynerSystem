@@ -2,7 +2,6 @@ from App import app
 from App.controllers.ControllerAcess import *
 from flask import render_template, request, flash,json, jsonify
 
-
 ####################################################################
 
 @app.errorhandler(404)
@@ -12,6 +11,7 @@ def page_not_found(error):
 ####################################################################
 
 @app.route("/")
+@app.route("/index")
 @loginRequired
 def main():
     return render_template('index.html')

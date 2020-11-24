@@ -15,12 +15,13 @@ def loginRequired(func):
     return decoratorFunc
 
 def isLogged():
-    return session.get("usuario")
+    if session.get("usuario"):
+        return True
 
 def validateLogin(user, senha):
     user = Model.User(name=user, passw=senha)
     if user.checkLogin():
-        session["usuario"] = user.getValues()
+        session["usuario"] = user.getDictValues()
     return isLogged()
 
 def islogout():
@@ -29,4 +30,6 @@ def islogout():
 
 def listUsers():
     res = Model.User().getUserList()
+    if not res:
+        goToPage("page_not_found")
     return res
