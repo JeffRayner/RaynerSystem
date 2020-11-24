@@ -2,11 +2,11 @@
 
 {% block content %}
 <div class="h-100 w-100 flex-fill">
-    <select class="form-control">
-        <option value="" disabled selected>Escolha um Usuario</option>
-        {% for i in result %}
-            <option value="{{ i.Id }}">{{ i.Name}}</option>
-        {% endfor %}
-    </select>
+    <form action="" method="POST">
+        <input type="text" class="form-control m-2 text-center shadow-none" name="usuario" placeholder="Usuário" required autofocus>
+        <input type="password" class="form-control m-2 text-center shadow-none" name="senha" placeholder="Senha" required>
+        <input type="submit" class="m-2 text-center btn btn-lg btn-danger btn-block" name="btnLogin" value="Login">
+            
+    </form>
 </div>
 {% endblock %}

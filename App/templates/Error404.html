@@ -1,16 +1,6 @@
-<html>
+{% extends "includes/base.html" %}
 
-<head>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Rayner System</title>
-    <link rel="shortcut icon" href="{{ url_for('static', filename="img/favicon16.png") }}" />
-    <link rel="stylesheet" href="{{ url_for('static', filename="css/bootstrap.min.css") }}">
-    <script src="{{ url_for('static', filename="jquery/jquery-3.5.1.min.js") }}"></script>
-    <script src="{{ url_for('static', filename="js/bootstrap.min.js") }}"></script>
-</head>
-
-<body >
-
+{% block content %}
     <div class="w-100 h-100 d-flex justify-content-center align-items-center bg-danger">
         <div action="" method="POST" class="p-4 d-flex flex-column justify-content-center align-items-center bg-white shadow-lg rounded">
             <h1>Oops!</h1>
@@ -19,6 +9,4 @@
         </div>
     </div>
 
-</body>
-
-</html>
+{% endblock %}

@@ -2,13 +2,14 @@ from App import app
 from App.controllers.ControllerAcess import *
 from flask import render_template, request, flash,json, jsonify
 
+
 ####################################################################
 
 @app.errorhandler(404)
 def page_not_found(error):
     return render_template('Error404.html'), 404
 
-####################################################################
+###################################################################
 
 @app.route("/")
 @app.route("/index")

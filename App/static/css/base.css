@@ -2,4 +2,5 @@ main{
     padding-top: 80px;
     padding-bottom: 26px;
     box-sizing: border-box;
+    background-color: var(--mainBgColor);
 }

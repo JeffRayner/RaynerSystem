@@ -7,7 +7,6 @@ def getDate():
 def getDateTime():
     return datetime.now().strftime("%d-%m-%Y %H:%M:%S")
 
-
 class User():
     __Table = "USERS"
 
