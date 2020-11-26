@@ -3,10 +3,12 @@
   <br>System<br>
 </h1>
 
-[![ISSUES]](https://github.com/JeffRayner/RaynerSystem/stargazers)
+
+[![STARS]](https://github.com/JeffRayner/RaynerSystem/stargazers)
 [![FORK]](https://github.com/JeffRayner/RaynerSystem/network/members)
 [![ISSUES]](https://github.com/JeffRayner/RaynerSystem/issues)
 [![LICENCE]]()
+
 
 ##  [Demonstração](https://rayner-system.vercel.app/)
 
