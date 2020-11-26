@@ -1,11 +1,7 @@
 # Rayner System
-[![Contributors][contributors-shield]](https://github.com/JeffRayner/RaynerSystem/graphs/contributors)
+[contributors-url]: https://github.com/JeffRayner/RaynerSystem/graphs/contributors
 
-[![Forks][forks-shield]][https://github.com/JeffRayner/RaynerSystem/network/members]
-[![Stargazers][stars-shield]][https://github.com/JeffRayner/RaynerSystem/stargazers]
-[![Issues][issues-shield]][issues-url]
-[![MIT License][license-shield]][license-url]
-[![LinkedIn][linkedin-shield]][linkedin-url]
+
 
 ##  [Demonstração](https://rayner-system.vercel.app/)
 
