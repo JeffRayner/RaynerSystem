@@ -18,7 +18,7 @@
 ##  Descrição
 <p>O projeto consiste em atender a demanda de registrar ligações realizadas a uma empresa que não possua um sistema integrado ao PABX. Mas em prover um histórico de atendimento, cadastrando qual cliente efetuou a chamada, e para qual setor foi direcionado, incluindo o funcionario que atendeu.
 
-O Sistema cobre a necessidade de manter o registro dos atendimento realizados através de ligações por seus cliente.
+O Sistema cobre a necessidade de manter o registro dos atendimento realizados através de ligações por seus clientes.
 
 E como base para funcionalidade, é o gerador de relatório, onde o mesmo pode puxar um histórico seja por data, setor e atendente. Podendo apresentar seja em dados simples, ou mesmo em gráficos para o requisitante.<
 
@@ -44,7 +44,7 @@ O sistema é acessado facilmente pelo navegador em um computador ou mesmo por um
 ##  Contribua
 <p>Você pode contribuir com o Sistema o quanto quiser. Concerteza irei analisar e incrementar no projeto.</p>
 
-[![LINKEDIN]](https://www.linkedin.com/in/jeff-rayner-ferreira-sim%C3%B5es-3b0296b1/)
+[![LINKEDIN]](https://www.linkedin.com/in/jeffrfsimoes/)
 
 
 
