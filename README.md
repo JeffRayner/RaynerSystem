@@ -1,10 +1,7 @@
 <h1 align="center">
   <a href="https://rayner-system.vercel.app"><img src="github\logo.png" width="400"></a>
-  <br>System
-  <br>
+  <br>System<br>
 </h1>
-
-
 
 [![ISSUES]](https://github.com/JeffRayner/RaynerSystem/stargazers)
 [![FORK]](https://github.com/JeffRayner/RaynerSystem/network/members)
@@ -13,22 +10,24 @@
 
 ##  [Demonstração](https://rayner-system.vercel.app/)
 
-<p>Acesse o <a href="https://rayner-system.vercel.app">Link</a>, e veja uma demonstração online do Sistema</p><br>
+<p>Acesse o <a href="https://rayner-system.vercel.app">Link</a>, e veja uma demonstração online do Sistema</p>
+
 
 ##  Descrição
-<p>O projeto consiste em atender a demanda de registrar ligações realizadas a uma empresa que não possua um sistema integrado ao PABX. Mas em prover um histórico de atendimento, cadastrando qual cliente efetuou a chamada, e para qual setor foi direcionado, incluindo o funcionario que atendeu.<br><br>
-O Sistema cobre a necessidade de manter o registro dos atendimento realizados através de ligações por seus cliente.<br><br>
-E como base para funcionalidade, é o gerador de relatório, onde o mesmo pode puxar um histórico seja por data, setor e atendente. Podendo apresentar seja em dados simples, ou mesmo em gráficos para o requisitante.<br><br>
+<p>O projeto consiste em atender a demanda de registrar ligações realizadas a uma empresa que não possua um sistema integrado ao PABX. Mas em prover um histórico de atendimento, cadastrando qual cliente efetuou a chamada, e para qual setor foi direcionado, incluindo o funcionario que atendeu.
+
+O Sistema cobre a necessidade de manter o registro dos atendimento realizados através de ligações por seus cliente.
+
+E como base para funcionalidade, é o gerador de relatório, onde o mesmo pode puxar um histórico seja por data, setor e atendente. Podendo apresentar seja em dados simples, ou mesmo em gráficos para o requisitante.<
+
 O sistema é acessado facilmente pelo navegador em um computador ou mesmo por um dispositivel móvel. Os layouts do sistema é todo projetado com responsividade.
-</p><br>
+</p>
 
 ##  Tecnologias
-<br>
 
 -   Back-End
     -   ![Python]
     -   ![SQLite]
-<br>
 
 -   Front-End
     -   ![Flask]
@@ -36,17 +35,21 @@ O sistema é acessado facilmente pelo navegador em um computador ou mesmo por um
     -   ![CSS]
     -   ![JavaScript]
     -   ![Bootstrap]
-<br>
 
 ##  Licença
 <p>LICENSE</p>
-<br>
 
 ##  Contribua
-<p>Você pode contribuir com o Sistema o quanto quiser. Concerteza irei analisar e incrementar no projeto.</p><br>
+<p>Você pode contribuir com o Sistema o quanto quiser. Concerteza irei analisar e incrementar no projeto.</p>
 
 [![LINKEDIN]](https://www.linkedin.com/in/jeff-rayner-ferreira-sim%C3%B5es-3b0296b1/)
-<br>
+
+
+
+
+
+
+
 
 <!-- IMAGES -->
 [ISSUES]: https://img.shields.io/github/issues/JeffRayner/RaynerSystem?style=for-the-badge
