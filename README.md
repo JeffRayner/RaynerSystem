@@ -44,7 +44,7 @@ O sistema é acessado facilmente pelo navegador em um computador ou mesmo por um
 ##  Contribua
 <p>Você pode contribuir com o Sistema o quanto quiser. Concerteza irei analisar e incrementar no projeto.</p>
 
-[![LINKEDIN]](https://www.linkedin.com/in/jeff-rayner-ferreira-sim%C3%B5es-3b0296b1/)
+[![LINKEDIN]](https://www.linkedin.com/in/jeffrfsimoes/)
 
 
 
