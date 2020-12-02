@@ -1,11 +1,4 @@
-from App import Conexao as DB
-from datetime import datetime
-
-def getDate():
-    return datetime.now().strftime("%d-%m-%Y")
-
-def getDateTime():
-    return datetime.now().strftime("%d-%m-%Y %H:%M:%S")
+from App.models import DB, _criarListaSQL, _getDate, _getDateTime
 
 class User():
     __Table = "USERS"
@@ -31,7 +24,7 @@ class User():
         self.password = ''
     
     def creatUser(self):
-        self.date = getDate()
+        self.date = _getDate()
         sql = f'INSERT INTO {self.__Table} (name, password, level, email, date) VALUES ("{self.name}","{self.password}",{self.level},"{self.email}","{self.date}")'
         return DB.queryDB(sql)
     

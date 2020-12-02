@@ -1,6 +1,6 @@
 from functools import wraps
 from flask import redirect, url_for, session
-from App.models import Model
+from App.models.Usuarios import Usuario
 
 
 def goToPage(Page):
@@ -19,9 +19,9 @@ def isLogged():
         return True
 
 def validateLogin(user, senha):
-    user = Model.User(name=user, passw=senha)
-    if user.checkLogin():
-        session["usuario"] = user.getDictValues()
+    user = Usuario(Usuario=user, Senha=senha)
+    if user.validarLogin():
+        session["usuario"] = user.getValues()
     return isLogged()
 
 def islogout():
@@ -29,7 +29,8 @@ def islogout():
         del session["usuario"]
 
 def listUsers():
-    res = Model.User().getUserList()
+    res = Usuario().listarUsuario()
     if not res:
         goToPage("page_not_found")
     return res
+

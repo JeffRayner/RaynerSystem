@@ -4,3 +4,7 @@ main{
     box-sizing: border-box;
     background-color: var(--mainBgColor);
 }
+
+nav{
+    min-height: 80px;
+}

@@ -2,18 +2,26 @@
 
 {% block content %}
 
-    {% include 'includes/navbar.html' %}
+{% include 'includes/navbar.html' %}
 
-    <div class="h-100 w-100 flex-fill">
-        <p>teste</p>
-        <select class="form-control shadow-none">
-            <option value="" disabled selected>Escolha um Usuario</option>
-            {% for i in result %}
-                <option value="{{ i.id }}">{{ i.name}}</option>
-            {% endfor %}
-        </select>
-    </div>
+<div class="h-100 w-100 flex-fill">
 
-    {% include 'includes/footer.html' %}
+    <select class="form-control shadow-none">
+        <option value="" disabled selected>Escolha um Usuario</option>
+        {% for i in result %}
+            <option value="{{ i.id }}">{{ i.usuario}}</option>
+        {% endfor %}
+    </select>
+
+    <!-- Button trigger modal -->
+    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalCadastro">
+        Cadastrar Usuario
+    </button>
+    {% include 'forms/cadUser.html' %}
+
+
+</div>
+
+{% include 'includes/footer.html' %}
 
 {% endblock %}

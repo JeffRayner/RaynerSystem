@@ -1,12 +1,12 @@
 import sqlite3
 #import logging as log
-#log.basicConfig(filename='Conexaolog.txt')
+#log.basicConfig(filename='DataBase-LOG.txt', enconding="utf-8")
 
-__DB = 'DataBase.db'
+__DB = 'NewDataBase.db'
 
 def __ErrorLog(error):
-    print (error)
-    # Adicionar o comando para registar Log de Erro
+    #log.error(error)
+    print ("LOG:",error)
 
 #funcao para realizar atualização no banco
 def queryDB(cmd):
@@ -16,7 +16,7 @@ def queryDB(cmd):
             cursor.execute(cmd)
             conn.commit()
             return True
-    except Exception as error:
+    except sqlite3.Error as error:
         __ErrorLog(error)
 
 #funcao para Multiplos cadastros no banco
@@ -26,8 +26,8 @@ def manyQueryDB(cmd, listaValores):
             cursor = conn.cursor()
             cursor.executemany(cmd, listaValores)
             conn.commit()
-            return True
-    except Exception as error:
+        return True
+    except sqlite3.Error as error:
         __ErrorLog(error)
 
 #funcao para realizar consulta no banco 
@@ -39,9 +39,11 @@ def readData(cmd, one=False):
             cursor.execute(cmd)
             res = cursor.fetchall()
             if one and res:
-                return res[0]
-        return res
-    except Exception as error:
+                res = res[0]
+    except sqlite3.Error as error:
         __ErrorLog(error)
+    return res
     
-
+#########################
+#   Funcao para criar o banco de dados
+#########################
