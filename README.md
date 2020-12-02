@@ -20,23 +20,19 @@
 
 O Sistema cobre a necessidade de manter o registro dos atendimento realizados através de ligações por seus clientes.
 
-E como base para funcionalidade, é o gerador de relatório, onde o mesmo pode puxar um histórico seja por data, setor e atendente. Podendo apresentar seja em dados simples, ou mesmo em gráficos para o requisitante.<
+E como base para funcionalidade, é o gerador de relatório, onde o mesmo pode puxar um histórico seja por data, setor e atendente. Podendo apresentar seja em dados simples, ou mesmo em gráficos para o requisitante.
 
 O sistema é acessado facilmente pelo navegador em um computador ou mesmo por um dispositivel móvel. Os layouts do sistema é todo projetado com responsividade.
 </p>
 
 ##  Tecnologias
-
--   Back-End
-    -   ![Python]
-    -   ![SQLite]
-
--   Front-End
-    -   ![Flask]
-    -   ![HTML]
-    -   ![CSS]
-    -   ![JavaScript]
-    -   ![Bootstrap]
+  -   ![Python]
+  -   ![SQLite]
+  -   ![Flask]
+  -   ![HTML]
+  -   ![CSS]
+  -   ![JavaScript]
+  -   ![Bootstrap]
 
 ##  Licença
 <p>LICENSE</p>
