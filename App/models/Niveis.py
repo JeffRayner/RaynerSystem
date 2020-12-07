@@ -1,7 +1,6 @@
-from App.models import DB, _criarListaSQL, _getDate, _getDateTime
+from App import Conexao as DB
 
-
-class Niveis():
+class Nivel():
     __Table= "NIVEIS"
 
     def __init__(self, ID=None, Nome=""):
@@ -26,16 +25,13 @@ class Niveis():
             return DB.queryDB(sql)
     
     def listar(self):
+        lista = []
         sql = f'SELECT * FROM {self.__Table}'
         sql = DB.readData(sql)
         if sql:
-            return _criarListaSQL(sql, self.__class__.__name__ )
+            for i in sql:
+                i = Nivel(*i)
+                lista.append(i.getValues())
+            return lista
     
-    def alterar(self, novoNome):
-        if self._validarNome(novoNome):
-            sql = f'UPDATE {self.__Table} SET Nome = "{novoNome}" WHERE ID = {self.__ID}'
-            return DB.queryDB(sql)
-    
-    def exluir(self):
-        pass
 

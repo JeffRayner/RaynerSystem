@@ -38,4 +38,5 @@ def main():
 @app.route('/usuarios', methods=['GET'])
 def usuarios():
     x = listUsers()
-    return render_template( 'usuarios.html', result=x)
+    n = listNivel()
+    return render_template( 'usuarios.html', result=x, niveis=n)

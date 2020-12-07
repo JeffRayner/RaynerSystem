@@ -10,6 +10,9 @@ class Usuario():
         self.Email = Email
         self.ID_Nivel = ID_Nivel
         
+    def __repr__(self):
+        return f'{self.__class__.__name__}(ID={self.ID}, Usuario="{self.Usuario}", Senha="", Email="{self.Email}", ID_Nivel={self.ID_Nivel})")'
+
     def __str__(self):
         return f'ID={self.ID}\nUsuario={self.Usuario}\nSenha={self.Senha}\nEmail={self.Email}\nID_Nivel={self.ID_Nivel}'
     
@@ -128,6 +131,9 @@ class Usuario():
             return sql 
     
     def excluirUsuario(self):
+        if self.ID:
+            sql = f'DELET FROM {self.__Table} WHERE ID = {self.ID}'
+            return DB.queryDB(sql)
         pass
 
 

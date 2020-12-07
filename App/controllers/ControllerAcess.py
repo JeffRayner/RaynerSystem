@@ -1,6 +1,7 @@
 from functools import wraps
 from flask import redirect, url_for, session
 from App.models.Usuarios import Usuario
+from App.models.Niveis import Nivel
 
 
 def goToPage(Page):
@@ -30,6 +31,12 @@ def islogout():
 
 def listUsers():
     res = Usuario().listarUsuario()
+    if not res:
+        goToPage("page_not_found")
+    return res
+
+def listNivel():
+    res = Nivel().listar()
     if not res:
         goToPage("page_not_found")
     return res

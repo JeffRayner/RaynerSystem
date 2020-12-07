@@ -2,10 +2,6 @@
 from flask import Flask, session
 from datetime import timedelta
 from os import urandom
-import socket
-
-host = socket.gethostname()
-IP = socket.gethostbyname(host)
 
 app = Flask(__name__)
 
