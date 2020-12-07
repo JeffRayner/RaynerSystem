@@ -1,6 +1,6 @@
 
 <div class="modal fade" id="modalCadastro" tabindex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-dialog " role="document">
         <div class="modal-content">
 
             <div class="modal-header">
@@ -13,37 +13,31 @@
             <div class="modal-body">
 
 
-                <!-- USUARIO E SENHA-->
-                <div class="row">
-                    <div class="col">Usuario</div>
-                    <div class="col">Senha</div>
-                    <div class="col">Nivel</div>
-                    <div class="w-100"></div>
-                    <div class="col">
-                        <input type="text" class="form-control text-center shadow-none" name="usuario" placeholder="Usuario" required="">
-                    </div>
-                    <div class="col">
-                        <input type="password" class="form-control text-center shadow-none" name="senha" placeholder="Senha" required="">
-                    </div>
-                    <div class="col">
-                        <select class="form-control shadow-none">
-                            <option value="" disabled selected>Escolha um nivel</option>
-                            {% for i in niveis %}
-                                <option value="{{ i.id }}">{{ i.nome}}</option>
-                            {% endfor %}
-                        </select>
-                    </div>
+                <div class="d-inline-block mb-2 bg-primary">
+                    <p class="m-auto">Usuario</p>
+                    <input type="text" class="form-control text-center shadow-none" name="usuario" placeholder="Usuario" required>
                 </div>
-                
-                <!-- EMAIL -->
-                <div class="row">
-                    <div class="col">Email</div>
-                    <div class="w-100"></div>
-                    <div class="col">
-                        <input type="text" class="form-control text-center shadow-none" name="Email" placeholder="Email" required="">
-                    </div>
+
+                <div class="d-inline-block mb-2 bg-danger">
+                    <p class="m-auto">Senha</p>
+                    <input type="password" class="form-control text-center shadow-none" name="senha" placeholder="Senha" required>
                 </div>
-                
+
+                <div class="d-inline mb-2 ">
+                    <p class="m-auto">Email</p>
+                    <input type="text" class="form-control text-center shadow-none" name="Email" placeholder="Email" required>
+                </div>
+
+                <div class="d-inline-block mb-2">
+                    <p class="m-auto">Nivel</p>
+                    <select class="form-control shadow-none">
+                        <option value="" disabled selected>Escolha um nivel</option>
+                        {% for i in niveis %}
+                            <option value="{{ i.id }}">{{ i.nome}}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+
             </div>
 
             <div class="modal-footer">
