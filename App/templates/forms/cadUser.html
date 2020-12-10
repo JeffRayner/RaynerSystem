@@ -11,7 +11,31 @@
             </div>
 
             <form action="">
+
                 <div class="modal-body">
+                    <div class="d-inline-block col-lg-5 p-0">
+                        <p class="m-auto">Usuario</p>
+                        <input type="text" class="form-control p-1 shadow-none" name="usuario" placeholder="Usuario" required>
+                    </div>
+                    <div class="d-inline-block col-lg-4 p-0">
+                        <p class="m-auto">Senha</p>
+                        <input type="password" class="form-control p-1 shadow-none" name="senha" placeholder="Senha" required>
+                    </div>
+                    <div class="d-inline-block col-lg-2 p-0">
+                        <p class="m-auto">Nivel</p>
+                        <select class="form-control p-1 shadow-none" required>
+                            <option value="" disabled selected>Escolha um nivel</option>
+                            {% for i in niveis %}
+                                <option value="{{ i.id }}">{{ i.nome}}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                    <div class="d-inline p-0">
+                        <p class="m-auto">Email</p>
+                        <input type="text" class="form-control text-center shadow-none" name="Email" placeholder="Email" required>
+                    </div>
+                    
+                    <!--
                     <div class="d-inline-block bg-primary">
                         <p class="m-auto">Usuario</p>
                         <input type="text" class="form-control text-center shadow-none" name="usuario" placeholder="Usuario" required>
@@ -22,24 +46,15 @@
                         <input type="password" class="form-control text-center shadow-none" name="senha" placeholder="Senha" required>
                     </div>
     
-                    <div class="d-inline">
-                        <p class="m-auto">Nivel</p>
-                        <select class="form-control shadow-none" required>
-                            <option value="" disabled selected>Escolha um nivel</option>
-                            {% for i in niveis %}
-                                <option value="{{ i.id }}">{{ i.nome}}</option>
-                            {% endfor %}
-                        </select>
-                    </div>
+                    
     
-                    <div class="d-inline">
-                        <p class="m-auto">Email</p>
-                        <input type="text" class="form-control text-center shadow-none" name="Email" placeholder="Email" required>
-                    </div>
+                    
                 </div>
+                  -->
                 <div class="modal-footer">
                     <button type="submit" class="btn btn-primary">Cadastrar</button>
                 </div>
+
             </form>
         </div>
     </div>
