@@ -36,6 +36,7 @@ def main():
 
 ####################################################################
 @app.route('/usuarios', methods=['GET'])
+@loginRequired
 def usuarios():
     x = listUsers()
     n = listNivel()
