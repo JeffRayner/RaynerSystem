@@ -41,3 +41,8 @@ def usuarios():
     x = listUsers()
     n = listNivel()
     return render_template( 'usuarios.html', result=x, niveis=n)
+
+####################################################################
+@app.route("/page")
+def page():
+    return render_template('landingpage.html')
