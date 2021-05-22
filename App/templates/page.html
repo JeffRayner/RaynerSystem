@@ -2,7 +2,7 @@
 
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Landing Page</title>
+    <title>{{ name }}</title>
     <link rel="shortcut icon" href="{{ url_for('static', filename="img/favicon16.png") }}" />
     <link rel="stylesheet" href="{{ url_for('static', filename="css/bootstrap.min.css") }}">
     <script src="{{ url_for('static', filename="jquery/jquery-3.5.1.min.js") }}"></script>
@@ -21,7 +21,7 @@
                     <img class="rounded-circle bg-white" src="https://bootdey.com/img/Content/avatar/avatar7.png">
                 </div>
                 <div class="py-2 text-center">
-                    <h4>@Jeff Rayner</h4>
+                    <h4>@{{ name }}</h4>
                     <p class="text-secondary m-0">Full Stack Developer</p>
                 </div>
             </div>
@@ -49,10 +49,9 @@
         </div>
     </main>
 
-    <footer class="w-100 d-flex justify-content-center align-items-center">
-        <div>© 2020 Copyright: <a href="/">RaynerSystem.com</a>
-        </div>
-    </footer>
+    {% block content %}
+        {% include 'includes/footer.html' %}
+    {% endblock %}
     
 </body>
 </html>

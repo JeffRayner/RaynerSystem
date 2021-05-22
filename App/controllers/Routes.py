@@ -1,6 +1,6 @@
 from App import app
 from App.controllers.ControllerAcess import *
-from flask import render_template, request, flash,json, jsonify
+from flask import render_template, request, flash, json, jsonify
 
 ####################################################################
 @app.errorhandler(404)
@@ -46,3 +46,8 @@ def usuarios():
 @app.route("/page")
 def page():
     return render_template('landingpage.html')
+
+####################################################################
+@app.route("/<user>")
+def profile(user):
+    return render_template('page.html', name=user)
