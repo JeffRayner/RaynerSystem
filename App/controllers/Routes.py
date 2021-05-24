@@ -50,4 +50,7 @@ def page():
 ####################################################################
 @app.route("/<user>")
 def profile(user):
-    return render_template('page.html', name=user)
+    u = "jeff"
+    if user == u:
+        return render_template('page.html', name=user)
+    return page_not_found(404)

@@ -14,7 +14,7 @@ class Profile():
     def ID(self):
         return self.__ID
     @ID.setter
-    def ID(self, id):
+    def ID(self, id: int):
         self.__ID = id
 
     @property
