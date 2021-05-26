@@ -43,7 +43,4 @@ def readData(cmd, one=False):
     except sqlite3.Error as error:
         __ErrorLog(error)
     return res
-    
-#########################
-#   Funcao para criar o banco de dados
-#########################
+

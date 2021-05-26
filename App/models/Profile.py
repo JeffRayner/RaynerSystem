@@ -20,22 +20,28 @@ class Profile():
     def url(self):
         return self.__url
 
-    def getValues(self):
+    def getValues(self) :
         return {"id":self.__ID, "url":self.__url, "nome":self.name, \
             "title":self.title, "email":self.email}
 
+    def generateUrl(self):
+        self.__url = token_urlsafe(4)
+
     def create(self):
+        self.generateUrl()
         sql = f'INSET INTO {self.__Table} (url, name, title, email) VALUES (?, ?, ?, ?)'
         values = (self.__url, self.name, self.title, self.email)
         #print(sql)
         #return DB.queryDB(sql, values)
 
 
-    def getUsuario(self, url):
-        sql = f'SELECT * FROM {self.__Table} WHERE url = "{url}"'
-        resultSql = DB.readData(sql, True)
-        self.__init__(*resultSql)
-        return self.getValues()
+    def getUsuario(self, url: str):
+        resultado = Profile()
+        cmd = f'SELECT * FROM {self.__Table} WHERE url = "{url}"'
+        cmd = DB.readData(cmd, True)
+        if cmd:
+            self.__init__(*cmd)
+        
 
 #x=Profile(1, 'a','a','a','a')
 #x.getUsuario("jeff")

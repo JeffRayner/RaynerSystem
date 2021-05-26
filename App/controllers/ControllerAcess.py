@@ -1,5 +1,6 @@
 from functools import wraps
 from flask import redirect, url_for, session
+from flask.helpers import flash
 from App.models.Usuarios import Usuario
 from App.models.Niveis import Nivel
 from App.models.Profile import Profile
@@ -24,7 +25,9 @@ def validateLogin(user, senha):
     user = Usuario(Usuario=user, Senha=senha)
     if user.validarLogin():
         session["usuario"] = user.getValues()
-    return isLogged()
+        goToPage("main")
+    else:
+        flash("Login Inválido !")
 
 def islogout():
     if session.get("usuario"):
@@ -42,6 +45,11 @@ def listNivel():
         goToPage("page_not_found")
     return res
 
+##############################################################
 def getUrlProfile(url):
-    r = Profile()
-    return r.getUsuario(url)
+    newProfile = Profile()
+    newProfile.getUsuario(url)
+    newProfile = newProfile.getValues()
+    return newProfile
+
+

@@ -80,7 +80,6 @@ class Usuario():
             return DB.queryDB(sql)
 
     def validarLogin(self):
-        #print (self.Usuario,self.Senha )
         sql = f'SELECT * FROM {self.__Table} WHERE Usuario = "{self.Usuario}" AND Senha = "{self.__Senha}" '
         sql = DB.readData(sql, True)
         if sql:

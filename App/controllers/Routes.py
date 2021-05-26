@@ -3,6 +3,13 @@ from App.controllers.ControllerAcess import *
 from flask import render_template, request, flash, json, jsonify
 
 ####################################################################
+@app.route("/")
+@app.route("/index")
+@loginRequired
+def main():
+    return render_template('index.html')
+    
+####################################################################
 @app.errorhandler(404)
 def page_not_found(error):
     return render_template('Error404.html'), 404
@@ -11,14 +18,9 @@ def page_not_found(error):
 @app.route("/login", methods=['GET','POST'])
 def login():
     if request.method == "POST":
-        if validateLogin(request.form['usuario'], request.form['senha']):
-            return goToPage("main")
-        else:
-            flash("Login Inválido !")
-
+        validateLogin(request.form['usuario'], request.form['senha'])
     if isLogged():
         return goToPage("main")
-
     return render_template('login.html')
 
 ####################################################################
@@ -26,13 +28,6 @@ def login():
 def logout():
     islogout()
     return goToPage("main")
-
-####################################################################
-@app.route("/")
-@app.route("/index")
-@loginRequired
-def main():
-    return render_template('index.html')
 
 ####################################################################
 @app.route('/usuarios', methods=['GET'])
@@ -43,14 +38,9 @@ def usuarios():
     return render_template( 'usuarios.html', result=x, niveis=n)
 
 ####################################################################
-@app.route("/page")
-def page():
-    return render_template('landingpage.html')
-
-####################################################################
 @app.route("/<url>")
 def profile(url):
-    user = getUrlProfile(url)
-    if user['id']:
-        return render_template('page.html', user=user)
+    profile = getUrlProfile(url)
+    if profile['id']:
+        return render_template('page.html', user=profile)
     return page_not_found(404)
