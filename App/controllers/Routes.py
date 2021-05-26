@@ -48,9 +48,9 @@ def page():
     return render_template('landingpage.html')
 
 ####################################################################
-@app.route("/<user>")
-def profile(user):
-    u = "jeff"
-    if user == u:
-        return render_template('page.html', name=user)
+@app.route("/<url>")
+def profile(url):
+    user = getUrlProfile(url)
+    if user['id']:
+        return render_template('page.html', user=user)
     return page_not_found(404)

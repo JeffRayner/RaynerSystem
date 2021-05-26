@@ -2,6 +2,7 @@ from functools import wraps
 from flask import redirect, url_for, session
 from App.models.Usuarios import Usuario
 from App.models.Niveis import Nivel
+from App.models.Profile import Profile
 
 
 def goToPage(Page):
@@ -41,3 +42,6 @@ def listNivel():
         goToPage("page_not_found")
     return res
 
+def getUrlProfile(url):
+    r = Profile()
+    return r.getUsuario(url)
