@@ -1,6 +1,5 @@
 <title>{{ user['nome'] }}</title>
 <link rel="stylesheet" href="{{ url_for('static', filename="css/page.css") }}">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
 
 {% extends "includes/base.html" %}
 
@@ -15,7 +14,7 @@
                 <img class="bg-white" src="https://bootdey.com/img/Content/avatar/avatar7.png">
             </div>
             <div class="py-2 text-center">
-                <h4>@{{ user['nome'] }}</h4>
+                <h4>{{ user['nome'] }}</h4>
                 <p class="text-secondary m-0">{{ user['title'] }}</p>
             </div>
         </div>
@@ -24,11 +23,10 @@
         <div id="socialArea" class="d-flex flex-column p-3 align-items-center">
             <ul class="d-inline-flex mb-0 p-0 justify-content-center align-items-center">
                 <div><a class="bi bi-linkedin" href="linkedin" target="_blank"></a></div>
+                <div><a class="bi bi-github" href="github" target="_blank"></a></div>
                 <div><a class="bi bi-twitter" href="twitter" target="_blank"></a></div>
-                <div><a class="bi bi-whatsapp" href="whatsapp" target="_blank"></a></div>
-                <div><a class="bi bi-facebook" href="facebook" target="_blank"></a></div>
                 <div><a class="bi bi-youtube" href="youtube" target="_blank"></a></div>
-                <div><a class="bi bi-messenger" href="messenger" target="_blank"></a></div>
+                <div><a class="bi bi-facebook" href="facebook" target="_blank"></a></div>
             </ul>
         </div>
 
@@ -38,7 +36,20 @@
                 <img class="rounded bg-light" src="https://bootdey.com/img/Content/avatar/avatar7.png" width="50">
                 <a class="text-capitalize w-100">follow message</a>
             </button>
+
+            <button class="btn btn-success d-flex text-center mb-4 align-items-center">
+                <img class="rounded bg-light" src="https://bootdey.com/img/Content/avatar/avatar7.png" width="50">
+                <a class="text-capitalize w-100">follow message</a>
+            </button>
+
+            <!-- E-MAIL USER PROFILE -->
+            <div id="emailArea" class="d-flex justify-content-center px-4">
+                <a href="mailto:{{ user['email'] }}" class="align-items-center bi bi-envelope-fill text-center font-weight-bold">{{ user['email'] }}</a>
+            </div>
         </div>
+
+        
+        
 
     </div>
 

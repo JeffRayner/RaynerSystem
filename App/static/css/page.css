@@ -26,3 +26,11 @@ main{
     -webkit-transform: scale(1.5); /* Safari 3-8 */
     transform: scale(1.5); 
   }
+
+#emailArea a{
+    color: #343a40;
+}
+#emailArea a::before{
+    font-size: 1.5rem;
+    padding: 0 .5rem 0 .5rem;
+}
